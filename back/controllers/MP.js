@@ -22,6 +22,11 @@ function createPreference(req, res) {
         quantity: 2,
       },
     ],
+    back_urls: {
+      success: "http://localhost:5000/api/v1/checkout/pagos/feedback",
+      failure: "http://localhost:5000/api/v1/checkout/pagos/feedback",
+    },
+    auto_return: "approved",
   };
 
   mercadopago.preferences
@@ -35,4 +40,8 @@ function createPreference(req, res) {
       console.log(error);
     });
 }
-module.exports = { createPreference };
+function confirmPayment(req, res) {
+  console.log(req.url, req.query, req.params);
+  res.redirect("http://localhost:3000/");
+}
+module.exports = { createPreference, confirmPayment };
