@@ -10,10 +10,16 @@ function createPreference(req, res) {
   // Crea un objeto de preferencia //creo q esto lo tengo q tomar dinamicamente, o sea q aca esta el primer paso cuando el cliente  comienza el pago, llamar a este API point
   let preference = {
     items: [
+      //NO PONGO TOTAL, solo precio unitario y cantidad, ML se encarga dsp de hacer la cuenta, ya lo chequeé
       {
-        title: "Mi producto",
-        unit_price: 100,
+        title: "Flower 100ml Kenzo",
+        unit_price: 10000,
         quantity: 1,
+      },
+      {
+        title: "Very Irresistible 75ml Givenchy",
+        unit_price: 7500,
+        quantity: 2,
       },
     ],
   };
